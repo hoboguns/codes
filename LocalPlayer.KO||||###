@@ -1,0 +1,15 @@
+local Flux = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/fluxlib.txt")()
+
+local win = Flux:Window("Player", "LocalPlayer modifying", Color3.fromRGB(255, 110, 48), Enum.KeyCode.LeftControl)
+local tab = win:Tab("Local Player", "http://www.roblox.com/asset/?id=6023426915")
+tab:Button("Destroy UI", "Will remove the UI from game", function()
+Flux:Notification("Removed", "Ok")
+wait(1)
+game.CoreGui.FluxLib:Destroy()
+end)
+tab:Slider("Walkspeed", "Makes you faster.", 0, 5000,16,function(t)
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = t
+end)
+tab:Slider("Jumpower", "Makes you jump higher.", 0, 5000,16,function(t)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = t
+end)
